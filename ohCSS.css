@@ -1,0 +1,38 @@
+.header {
+	text-align: left;
+  width: 750px; 
+ 
+  margin-right: auto; 
+  margin-left: auto; 
+  padding: 10px;
+} 
+
+h1 {
+  color: #000080;
+  font-size: 200%;
+  font-family: Arial, Verdana, sans-serif;
+  text-align: left;
+}
+
+footer {
+	background: #8D8CFF;
+	width: 100%;
+}
+
+footer p {
+	margin: 0px 50px;
+	text-align : left;
+	color: #000080;
+	
+}
+
+footer a {
+	color: #000080;
+	font-size: 13px;
+}
+
+.add_place {
+    float: right;
+    font-size: 16px;
+}
+
