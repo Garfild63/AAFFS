@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'pidorasy83', 'onavt_25293093_database');
+$link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'password', 'onavt_25293093_database');
 mysqli_query($link, 'DROP TABLE Users');
 mysqli_query($link, 'CREATE TABLE Users (id INTEGER PRIMARY KEY AUTO_INCREMENT, user TEXT, password TEXT)');
 mysqli_query($link, 'INSERT INTO Users (user, password) VALUES ("admin", "sabina83")');

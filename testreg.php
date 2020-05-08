@@ -16,7 +16,7 @@ $password = stripslashes($password);
     $login = trim($login);
     $password = trim($password);
 // подключаемся к базе
-    $link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'pidorasy83', 'onavt_25293093_database');
+    $link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'password', 'onavt_25293093_database');
 // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
  
 $result = mysqli_query($link, "SELECT * FROM Users WHERE user='$login'"); //извлекаем из базы все данные о пользователе с введенным логином

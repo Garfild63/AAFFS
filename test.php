@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'pidorasy83', 'onavt_25293093_database');
+$link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'password', 'onavt_25293093_database');
 $result = mysqli_query($link, 'SELECT * FROM Sights WHERE TRUE');
 if ($row = mysqli_fetch_all($result)) {
     echo "const markers = [ ";

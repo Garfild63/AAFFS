@@ -14,7 +14,7 @@ $password = htmlspecialchars($password);
 //удаляем лишние пробелы
 $login = trim($login);
 $password = trim($password);
-$link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'pidorasy83', 'onavt_25293093_database');
+$link = mysqli_connect('sql305.hostronavt.ru', 'onavt_25293093', 'password', 'onavt_25293093_database');
 //файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
 //проверка на существование пользователя с таким же логином
 $result = mysqli_query($link, "SELECT id FROM Users WHERE user='$login'");
