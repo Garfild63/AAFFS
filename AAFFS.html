@@ -6,7 +6,7 @@
 
   <title>Open horizons</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="ohCSS.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
 
   <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -127,9 +127,9 @@ old_photo2:
 {
       text: 'Сиднейский Оперный Театр',
       coords: {lat: -33.856579, lng: 151.215344},
-      old_photo1:’https://avatars.mds.yandex.net/get-pdb/33827/200a18d9-eb80-41ab-8239-21b253b8aafa/s1200?webp=false’,
       old_photo2: 'https://files3.adme.ru/files/news/part_124/1245315/4a.jpg',
       old_photo3: 'https://ribalych.ru/wp-content/uploads/2019/10/vintazhnye-fotografii_030.jpg',
+      photo: 'https://avatars.mds.yandex.net/get-pdb/33827/200a18d9-eb80-41ab-8239-21b253b8aafa/s1200?webp=false',
       description: 'Австралия. Музыкальный театр в Сиднее, одно из наиболее известных и легко узнаваемых зданий мира, являющееся символом крупнейшего города Австралии и одной из главных достопримечательностей континента'
     },
 
@@ -212,7 +212,7 @@ text: 'Невский проспект',
     img_old1.src = e.target.data.old_photo1;
 	img_old2.src = e.target.data.old_photo2;
 	img_old3.src = e.target.data.old_photo3;
-    document.getElementById('modalContent').innerText = e.target.data.description;
+    document.getElementById('modalContent').innerText = e.target.data.description + '\n' ;
     parentEl.appendChild(img);
     parentEl.appendChild(img_old1);
     parentEl.appendChild(img_old2);

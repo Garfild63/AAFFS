@@ -22,7 +22,7 @@
 
        <div class="header">
             <div class="zagolovok"> <h1> Open Horison </h1> </div>
-	<div class= “podzagolovok”><h4>В прошлое могут смотреть не только лишь все</h4> </div>
+	<div class= “podzagolovok”><h4>Чтобы смотреть в будущее, посмотри в прошлое</h4> </div>
        </div>
 
 
@@ -95,7 +95,7 @@
 
   const createMarker = (text, coords) => {
     var svgMarkup = `
-      <div>
+      <div style="position: absolute; top: -22px; left: -7px;">
 <img src="Marker.png">
         <span style="color: black; padding: 2px; line-height: 26px;">${text}</span>
       </div>
@@ -116,12 +116,16 @@ if ($row = mysqli_fetch_all($result)) {
         echo $arr[2];
         echo ", lng:";
         echo $arr[3];
-        echo "}, comment: '\\n ";
+        echo "}, old_photo1: '";
 		echo $arr[4];
-		echo "', photo: '";
+		echo "', old_photo2: '";
 		echo $arr[5];
+		echo "', old_photo3: '";
+		echo $arr[6];
+		echo "', photo: '";
+		echo $arr[7];
 		echo "', description: '";
-        echo $arr[6];
+        echo $arr[8];
         echo "'}, ";
     }
     echo "];";
@@ -134,13 +138,32 @@ if ($row = mysqli_fetch_all($result)) {
     map.addObject(marker);
   });
   var parentEl = document.getElementById('modalContent'),
-      img = document.createElement("IMG");
+      img = document.createElement("IMG"),
+      img_old1 = document.createElement("IMG"),
+      img_old2 = document.createElement("IMG"),
+      img_old3 = document.createElement("IMG");
   img.width = 450; //Настройка ширины изображения
   img.height = 300; //Настройка высоты изображения
+  img_old1.width = 450;
+  img_old1.height  = 300;
+  img_old2.width = 450;
+  img_old2.height = 300;
+  img_old3.width = 450;
+  img_old3.height = 300;
+  img.alt = 'Добавьте фото';
+  img_old1.alt = 'Добавьте фото';
+  img_old2.alt = 'Добавьте фото';
+  img_old3.alt = 'Добавьте фото';
   map.addEventListener('tap', (e) => {
     img.src = e.target.data.photo;
-    document.getElementById('modalContent').innerText = e.target.data.description + '\n' + e.target.data.comment;
+    img_old1.src = e.target.data.old_photo1;
+	img_old2.src = e.target.data.old_photo2;
+	img_old3.src = e.target.data.old_photo3;
+    document.getElementById('modalContent').innerText = e.target.data.description + '\n' ;
     parentEl.appendChild(img);
+    parentEl.appendChild(img_old1);
+    parentEl.appendChild(img_old2);
+    parentEl.appendChild(img_old3);
     $('#exampleModal').modal('show');
   });
 </script>

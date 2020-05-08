@@ -32,8 +32,12 @@
                 echo '<input name="lat" type="text" value="' . $row['lat'] . '"><br/>';
                 echo "Долгота:<br/>";
                 echo '<input name="lng" type="text" value="' . $row['lng'] . '"><br/>';
-                echo "Комментарий:<br/>";
-                echo '<textarea name="comment">' . $row['comment'] . '</textarea><br/>';
+                echo "Старое фото 1:<br/>";
+                echo '<input name="op1" type="url" value="' . $row['op1'] . '"><br/>';
+				echo "Старое фото 2:<br/>";
+                echo '<input name="op2" type="url" value="' . $row['op2'] . '"><br/>';
+				echo "Старое фото 3:<br/>";
+                echo '<input name="op3" type="url" value="' . $row['op3'] . '"><br/>';
                 echo "Фото:<br/>";
                 echo '<input name="photo" type="url" value="' . $row['photo'] . '"><br/>';
                 echo "Описание:<br/>";
@@ -50,8 +54,12 @@
                 echo '<input name="lat" type="text" value="0.0"><br/>';
                 echo "Долгота:<br/>";
                 echo '<input name="lng" type="text" value="0.0"><br/>';
-                echo "Комментарий:<br/>";
-                echo '<textarea name="comment"></textarea><br/>';
+                echo "Старое фото 1:<br/>";
+                echo '<input name="op1" type="url" value="https://site.com/image.jpg"><br/>';
+				echo "Старое фото 2:<br/>";
+                echo '<input name="op2" type="url" value="https://site.com/image.jpg"><br/>';
+				echo "Старое фото 3:<br/>";
+                echo '<input name="op3" type="url" value="https://site.com/image.jpg"><br/>';
                 echo "Фото:<br/>";
                 echo '<input name="photo" type="url" value="https://site.com/image.jpg"><br/>';
                 echo "Описание:<br/>";
@@ -64,7 +72,7 @@
         }
     } else if (isset($_POST['add'])) {
             if ($_POST['text'] != '') {
-                mysqli_query($link, 'INSERT INTO Suggestions (text, lat, lng, comment, photo, description) VALUES ("' . $_POST['text'] . '", ' . $_POST['lat'] . ', ' . $_POST['lng'] . ', "' . $_POST['comment'] . '", "' . $_POST['photo'] . '", "' . $_POST['description'] . '")');
+                mysqli_query($link, 'INSERT INTO Suggestions (text, lat, lng, op1, op2, op3, photo, description) VALUES ("' . $_POST['text'] . '", ' . $_POST['lat'] . ', ' . $_POST['lng'] . ', "' . $_POST['op1'] . '", "' . $_POST['op2'] . '", "' . $_POST['op3'] . '", "' . $_POST['photo'] . '", "' . $_POST['description'] . '")');
                 echo "Предложено!<br/>";
                 echo '<form action="suggest.php" method="post">';
                 echo '<input type="submit" name="submit" value="Вернуться">';
